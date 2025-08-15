@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Handy Fix — Mantenimiento y Reparación en Playa del Carmen</title>
+  <meta name="description" content="Servicios de mantenimiento y reparación del hogar en Playa del Carmen: plomería, electricidad, pintura, carpintería y más. Contáctanos por WhatsApp o visita nuestro Facebook para ver nuestros trabajos." />
+  <meta property="og:title" content="Handy Fix — Mantenimiento en Playa del Carmen" />
+  <meta property="og:description" content="Trabajos rápidos y de calidad: plomería, electricidad, pintura, carpintería y más. Escríbenos por WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#1a1a1a;
+      --muted:#6b7280; /* gray-500 */
+      --brand:#f1c40f; /* yellow */
+      --brand-dark:#d4ac0d;
+      --surface:#f5f5f5;
+      --line:#e5e7eb;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, sans-serif; color:var(--text); background:var(--bg);}    
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; height:auto; display:block}
+    .container{max-width:1200px; margin:0 auto; padding:0 20px}
+    header{position:sticky; top:0; z-index:50; background:rgba(255,255,255,.92); backdrop-filter: blur(6px); border-bottom:1px solid var(--line)}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; height:68px}
+    .logo{display:flex; align-items:center; gap:12px}
+    .logo img{width:44px; height:44px; object-fit:cover; border-radius:10px; background:#eee}
+    .logo-title{font-weight:700; letter-spacing:.3px}
+    .menu{display:flex; gap:18px; align-items:center}
+    .menu a{font-weight:600; color:#2c2c2c}
+    .cta{display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:#000; border:none; padding:12px 16px; border-radius:12px; font-weight:700; cursor:pointer; transition:.2s transform, .2s box-shadow}
+    .cta:hover{transform:translateY(-1px); box-shadow:0 10px 18px rgba(0,0,0,.08)}
+    .lang{display:inline-flex; gap:8px; align-items:center; border:1px solid var(--line); padding:8px 10px; border-radius:10px; background:#fff}
+    .lang button{background:transparent; border:none; font-weight:600; cursor:pointer; color:#444; padding:6px 8px; border-radius:8px}
+    .lang button.active{background:var(--surface);}
+
+    /* Hero */
+    .hero{position:relative; overflow:hidden; background:linear-gradient(120deg, #fff 0%, #fff 50%, #fef8d9 100%)}
+    .hero-inner{display:grid; grid-template-columns: 1.1fr .9fr; gap:24px; padding:56px 0}
+    .hero h1{font-size: clamp(28px, 4vw, 44px); line-height:1.1; margin:0 0 12px}
+    .hero p{color:var(--muted); margin:0 0 20px}
+    .badges{display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 26px}
+    .badge{background:#fff; border:1px solid var(--line); padding:8px 12px; border-radius:999px; font-weight:600; font-size:14px}
+    .hero-card{background:#fff; border:1px solid var(--line); border-radius:18px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,.05)}
+    .hero-card .img{aspect-ratio: 4/3; background:linear-gradient(135deg,#ddd,#f7f7f7)}
+    .hero-actions{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+    .ghost{border:1px solid var(--line); background:#fff; padding:12px 16px; border-radius:12px; font-weight:700}
+
+    /* Sections */
+    section{padding:64px 0; border-top:1px solid var(--line)}
+    .section-title{font-size: clamp(22px, 3.2vw, 34px); margin:0 0 16px}
+    .section-sub{color:var(--muted); margin:0 0 28px}
+    .grid-3{display:grid; grid-template-columns: repeat(3, 1fr); gap:18px}
+    .grid-2{display:grid; grid-template-columns: repeat(2, 1fr); gap:18px}
+    .card{background:#fff; border:1px solid var(--line); border-radius:18px; padding:18px}
+    .card .icon{width:44px; height:44px; border-radius:12px; background:var(--brand); display:grid; place-items:center; font-weight:800}
+    .card h3{margin:12px 0 8px}
+    .card p{color:var(--muted); margin:0}
+
+    /* Services */
+    .service{display:flex; gap:14px; align-items:flex-start}
+    .service .bullet{min-width:24px; min-height:24px; border-radius:6px; background:var(--brand)}
+
+    /* Gallery */
+    .gallery{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px}
+    .tile{position:relative; border-radius:16px; overflow:hidden; background:linear-gradient(135deg,#eee,#fafafa); border:1px solid var(--line)}
+    .tile .thumb{aspect-ratio: 4/3; object-fit:cover; width:100%; height:100%}
+    .tile .cap{position:absolute; left:10px; bottom:10px; background:rgba(255,255,255,.85); padding:6px 10px; border-radius:999px; font-size:12px; font-weight:700}
+
+    /* Testimonials */
+    .testi{display:grid; grid-template-columns: repeat(3, 1fr); gap:16px}
+    .quote{background:#fff; border:1px solid var(--line); border-radius:18px; padding:18px}
+    .quote p{color:#333; margin:0 0 10px}
+    .quote .who{display:flex; align-items:center; gap:10px}
+    .avatar{width:36px; height:36px; border-radius:50%; background:#ddd}
+
+    /* Contact */
+    form{display:grid; gap:12px}
+    input, textarea{width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:12px; font:inherit}
+    textarea{min-height:110px}
+
+    footer{background:#111; color:#eee}
+    .footer-grid{display:grid; grid-template-columns: 1.2fr 1fr; gap:24px}
+    .footer a{color:#fff}
+    .tag{display:inline-block; padding:6px 10px; border-radius:999px; background:#222; border:1px solid #2e2e2e; color:#bbb; margin-right:8px; margin-bottom:8px}
+
+    /* Reveal on scroll */
+    .reveal{opacity:0; transform: translateY(14px); transition: .6s ease}
+    .reveal.visible{opacity:1; transform:none}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-inner{grid-template-columns: 1fr}
+      .grid-3{grid-template-columns: 1fr}
+      .grid-2{grid-template-columns: 1fr}
+      .gallery{grid-template-columns: 1fr 1fr}
+      .testi{grid-template-columns: 1fr}
+      .footer-grid{grid-template-columns: 1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <img src="https://www.facebook.com/photo/?fbid=122099977592974176&set=a.122099973650974176" alt="Handy Fix Logo" onerror="this.style.background='#eee'"/>
+        <div class="logo-title">Handy Fix</div>
+      </div>
+      <nav class="menu">
+        <a href="#services" data-i18n="nav_services">Servicios</a>
+        <a href="#gallery" data-i18n="nav_gallery">Galería</a>
+        <a href="#testimonials" data-i18n="nav_testimonials">Opiniones</a>
+        <a href="#contact" data-i18n="nav_contact">Contacto</a>
+        <div class="lang" aria-label="Language switcher">
+          <button id="btn-es" class="active" data-lang="es">ES</button>
+          <button id="btn-en" data-lang="en">EN</button>
+        </div>
+        <a class="cta" href="https://wa.me/529842336727" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <span>WhatsApp</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy reveal">
+          <h1 data-i18n="hero_title">Mantenimiento en Playa del Carmen</h1>
+          <p data-i18n="hero_sub">Reparaciones rápidas y de calidad: plomería, electricidad, pintura, carpintería y más.</p>
+          <div class="badges">
+            <span class="badge" data-i18n="hero_badge1">Respuesta el mismo día</span>
+            <span class="badge" data-i18n="hero_badge2">Presupuesto sin costo</span>
+            <span class="badge" data-i18n="hero_badge3">Garantía en el trabajo</span>
+          </div>
+          <div class="hero-actions">
+            <a class="cta" href="https://wa.me/529842336727" target="_blank" rel="noopener" data-i18n="cta_whatsapp">Escríbenos por WhatsApp</a>
+            <a class="ghost" href="https://www.facebook.com/profile.php?id=61579225294824" target="_blank" rel="noopener" data-i18n="cta_facebook">Ver trabajos en Facebook</a>
+          </div>
+        </div>
+        <div class="hero-card reveal">
+          <img class="img" src="https://images.unsplash.com/photo-1586105251261-72a756497a12?q=80&w=1200&auto=format&fit=crop" alt="Trabajos de mantenimiento — ejemplo"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="why_title">¿Por qué elegirnos?</h2>
+        <p class="section-sub reveal" data-i18n="why_sub">Cuidamos tu hogar como si fuera el nuestro. Equipo puntual, materiales de calidad y atención al detalle.</p>
+        <div class="grid-3">
+          <div class="card reveal">
+            <div class="icon">✓</div>
+            <h3 data-i18n="why_1_t">Experiencia comprobada</h3>
+            <p data-i18n="why_1_d">Más de 300 proyectos: pintura, plomería, electricidad, carpintería y restauración.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">⚡</div>
+            <h3 data-i18n="why_2_t">Respuesta rápida</h3>
+            <p data-i18n="why_2_d">Atendemos el mismo día en Playa del Carmen y zonas cercanas.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">🛠️</div>
+            <h3 data-i18n="why_3_t">Trabajo garantizado</h3>
+            <p data-i18n="why_3_d">Usamos materiales adecuados y entregamos con garantía.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="services_title">Servicios</h2>
+        <p class="section-sub reveal" data-i18n="services_sub">Mantenimiento y reparaciones puntuales. Sin obras completas — soluciones precisas.</p>
+        <div class="grid-2">
+          <div class="card reveal service">
+            <div class="bullet"></div>
+            <div>
+              <h3 data-i18n="srv_1_t">Plomería</h3>
+              <p data-i18n="srv_1_d">Fugas, mezcladoras, desagües, calentadores de paso, sellado e impermeabilización.</p>
+            </div>
+          </div>
+          <div class="card reveal service">
+            <div class="bullet"></div>
+            <div>
+              <h3 data-i18n="srv_2_t">Electricidad</h3>
+              <p data-i18n="srv_2_d">Tomas, interruptores, luminarias, diagnóstico de cortos, protección y cableado.</p>
+            </div>
+          </div>
+          <div class="card reveal service">
+            <div class="bullet"></div>
+            <div>
+              <h3 data-i18n="srv_3_t">Pintura y muros</h3>
+              <p data-i18n="srv_3_d">Preparación, reparación de humedad, pintura interior/exterior, acabados.</p>
+            </div>
+          </div>
+          <div class="card reveal service">
+            <div class="bullet"></div>
+            <div>
+              <h3 data-i18n="srv_4_t">Carpintería y muebles</h3>
+              <p data-i18n="srv_4_d">Ajustes, instalaciones, restauración y mantenimiento de madera.</p>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:20px" class="reveal">
+          <a class="cta" href="https://wa.me/529842336727" target="_blank" rel="noopener" data-i18n="cta_budget">Pide tu presupuesto por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="gallery_title">Galería / Antes y Después</h2>
+        <p class="section-sub reveal" data-i18n="gallery_sub">Mira más proyectos en nuestro Facebook.</p>
+        <div class="gallery">
+          <a class="tile reveal" href="https://www.facebook.com/profile.php?id=61579225294824" target="_blank" rel="noopener">
+            <img class="thumb" src="https://images.unsplash.com/photo-1582582621952-14057c0776ef?q=80&w=1200&auto=format&fit=crop" alt="Pintura — antes y después"/>
+            <span class="cap" data-i18n="cap_view">Ver proyecto</span>
+          </a>
+          <a class="tile reveal" href="https://www.facebook.com/profile.php?id=61579225294824" target="_blank" rel="noopener">
+            <img class="thumb" src="https://images.unsplash.com/photo-1596079890741-2cd8c49a1b27?q=80&w=1200&auto=format&fit=crop" alt="Plomería — reparación"/>
+            <span class="cap" data-i18n="cap_view">Ver proyecto</span>
+          </a>
+          <a class="tile reveal" href="https://www.facebook.com/profile.php?id=61579225294824" target="_blank" rel="noopener">
+            <img class="thumb" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop" alt="Carpintería — instalación"/>
+            <span class="cap" data-i18n="cap_view">Ver proyecto</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="testi_title">Opiniones de clientes</h2>
+        <p class="section-sub reveal" data-i18n="testi_sub">Lo que dicen nuestros clientes después del servicio.</p>
+        <div class="testi">
+          <div class="quote reveal">
+            <p data-i18n="q1">“Llegaron puntual, resolvieron la fuga y dejaron todo limpio. Recomendados.”</p>
+            <div class="who"><div class="avatar"></div><strong>María G.</strong>, Playa del Carmen</div>
+          </div>
+          <div class="quote reveal">
+            <p data-i18n="q2">“Excelente trabajo de pintura, cuidaron los detalles y cumplieron el tiempo.”</p>
+            <div class="who"><div class="avatar"></div><strong>Andrés R.</strong>, Centro</div>
+          </div>
+          <div class="quote reveal">
+            <p data-i18n="q3">“Instalaron el calentador de paso y la carpintería. Todo quedó perfecto.”</p>
+            <div class="who"><div class="avatar"></div><strong>Sofía L.</strong>, Zazil-Ha</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Form -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="contact_title">Contacto</h2>
+        <p class="section-sub reveal" data-i18n="contact_sub">Cuéntanos qué necesitas y te respondemos por WhatsApp.</p>
+        <div class="grid-2">
+          <div class="card reveal">
+            <form id="contactForm">
+              <input type="text" id="name" name="name" placeholder="Nombre" required>
+              <input type="tel" id="phone" name="phone" placeholder="Teléfono" required>
+              <input type="email" id="email" name="email" placeholder="Email">
+              <textarea id="message" name="message" placeholder="Describe tu solicitud"></textarea>
+              <button type="submit" class="cta" data-i18n="form_send">Enviar por WhatsApp</button>
+            </form>
+            <p style="color:var(--muted); margin-top:8px" data-i18n="form_hint">Al enviar, se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+          </div>
+          <div class="card reveal">
+            <h3 style="margin-top:0" data-i18n="owner_title">Datos de contacto</h3>
+            <p><strong>Viktor</strong><br> 
+              <a href="https://wa.me/529842336727" target="_blank" rel="noopener">+52 984 233 6727</a><br>
+              <a href="mailto:victormxpdc@gmail.com">victormxpdc@gmail.com</a>
+            </p>
+            <div>
+              <a class="tag" href="https://wa.me/529842336727" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="tag" href="https://www.facebook.com/profile.php?id=61579225294824" target="_blank" rel="noopener">Facebook</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="padding:26px 0">
+      <div class="footer-grid">
+        <div>
+          <div style="font-weight:700; margin-bottom:6px">Handy Fix</div>
+          <div style="color:#bbb" data-i18n="footer_tag">Mantenimiento y reparación en Playa del Carmen.</div>
+        </div>
+        <div style="text-align:left">
+          <a class="cta" href="https://wa.me/529842336727" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+    },{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // Language strings (ES default, EN alternative)
+    const dict = {
+      es: {
+        nav_services: 'Servicios',
+        nav_gallery: 'Galería',
+        nav_testimonials: 'Opiniones',
+        nav_contact: 'Contacto',
+        hero_title: 'Mantenimiento en Playa del Carmen',
+        hero_sub: 'Reparaciones rápidas y de calidad: plomería, electricidad, pintura, carpintería y más.',
+        hero_badge1: 'Respuesta el mismo día',
+        hero_badge2: 'Presupuesto sin costo',
+        hero_badge3: 'Garantía en el trabajo',
+        cta_whatsapp: 'Escríbenos por WhatsApp',
+        cta_facebook: 'Ver trabajos en Facebook',
+        why_title: '¿Por qué elegirnos?',
+        why_sub: 'Cuidamos tu hogar como si fuera el nuestro. Equipo puntual, materiales de calidad y atención al detalle.',
+        why_1_t: 'Experiencia comprobada',
+        why_1_d: 'Más de 300 proyectos: pintura, plomería, electricidad, carpintería y restauración.',
+        why_2_t: 'Respuesta rápida',
+        why_2_d: 'Atendemos el mismo día en Playa del Carmen y zonas cercanas.',
+        why_3_t: 'Trabajo garantizado',
+        why_3_d: 'Usamos materiales adecuados y entregamos con garantía.',
+        services_title: 'Servicios',
+        services_sub: 'Mantenimiento y reparaciones puntuales. Sin obras completas — soluciones precisas.',
+        srv_1_t: 'Plomería',
+        srv_1_d: 'Fugas, mezcladoras, desagües, calentadores de paso, sellado e impermeabilización.',
+        srv_2_t: 'Electricidad',
+        srv_2_d: 'Tomas, interruptores, luminarias, diagnóstico de cortos, protección y cableado.',
+        srv_3_t: 'Pintura y muros',
+        srv_3_d: 'Preparación, reparación de humedad, pintura interior/exterior, acabados.',
+        srv_4_t: 'Carpintería y muebles',
+        srv_4_d: 'Ajustes, instalaciones, restauración y mantenimiento de madera.',
+        cta_budget: 'Pide tu presupuesto por WhatsApp',
+        gallery_title: 'Galería / Antes y Después',
+        gallery_sub: 'Mira más proyectos en nuestro Facebook.',
+        cap_view: 'Ver proyecto',
+        testi_title: 'Opiniones de clientes',
+        testi_sub: 'Lo que dicen nuestros clientes después del servicio.',
+        q1: '“Llegaron puntual, resolvieron la fuga y dejaron todo limpio. Recomendados.”',
+        q2: '“Excelente trabajo de pintura, cuidaron los detalles y cumplieron el tiempo.”',
+        q3: '“Instalaron el calentador de paso y la carpintería. Todo quedó perfecto.”',
+        contact_title: 'Contacto',
+        contact_sub: 'Cuéntanos qué necesitas y te respondemos por WhatsApp.',
+        form_send: 'Enviar por WhatsApp',
+        form_hint: 'Al enviar, se abrirá WhatsApp con tu mensaje listo para enviar.',
+        owner_title: 'Datos de contacto',
+        footer_tag: 'Mantenimiento y reparación en Playa del Carmen.'
+      },
+      en: {
+        nav_services: 'Services',
+        nav_gallery: 'Gallery',
+        nav_testimonials: 'Reviews',
+        nav_contact: 'Contact',
+        hero_title: 'Maintenance in Playa del Carmen',
+        hero_sub: 'Fast, quality repairs: plumbing, electrical, painting, carpentry and more.',
+        hero_badge1: 'Same‑day response',
+        hero_badge2: 'Free estimate',
+        hero_badge3: 'Work warranty',
+        cta_whatsapp: 'Message us on WhatsApp',
+        cta_facebook: 'See work on Facebook',
+        why_title: 'Why choose us?',
+        why_sub: 'We care for your home like our own. On‑time team, quality materials and attention to detail.',
+        why_1_t: 'Proven experience',
+        why_1_d: '300+ projects: painting, plumbing, electrical, carpentry and restoration.',
+        why_2_t: 'Quick response',
+        why_2_d: 'Same‑day service in Playa del Carmen and nearby areas.',
+        why_3_t: 'Guaranteed work',
+        why_3_d: 'We use proper materials and deliver with warranty.',
+        services_title: 'Services',
+        services_sub: 'Targeted maintenance and repairs. No full remodels — precise solutions.',
+        srv_1_t: 'Plumbing',
+        srv_1_d: 'Leaks, faucets, drains, tankless heaters, sealing and waterproofing.',
+        srv_2_t: 'Electrical',
+        srv_2_d: 'Outlets, switches, lighting, short diagnostics, protection & wiring.',
+        srv_3_t: 'Painting & walls',
+        srv_3_d: 'Prep, moisture repair, interior/exterior painting, finishes.',
+        srv_4_t: 'Carpentry & furniture',
+        srv_4_d: 'Adjustments, installations, restoration and wood maintenance.',
+        cta_budget: 'Get a quote on WhatsApp',
+        gallery_title: 'Gallery / Before & After',
+        gallery_sub: 'See more projects on our Facebook page.',
+        cap_view: 'View project',
+        testi_title: 'Customer reviews',
+        testi_sub: 'What customers say after our service.',
+        q1: '“They arrived on time, fixed the leak and left everything clean. Recommended.”',
+        q2: '“Great paint job, attention to detail and on schedule.”',
+        q3: '“Installed the tankless heater and carpentry. Everything perfect.”',
+        contact_title: 'Contact',
+        contact_sub: 'Tell us what you need — we will reply on WhatsApp.',
+        form_send: 'Send via WhatsApp',
+        form_hint: 'When you send, WhatsApp will open with your message ready to go.',
+        owner_title: 'Contact details',
+        footer_tag: 'Home maintenance and repair in Playa del Carmen.'
+      }
+    };
+
+    function setLang(lang){
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        if(dict[lang][key]) el.textContent = dict[lang][key];
+      });
+      document.getElementById('btn-es').classList.toggle('active', lang==='es');
+      document.getElementById('btn-en').classList.toggle('active', lang==='en');
+      document.documentElement.lang = lang;
+      // Update meta description slightly for SEO (non-critical)
+      const meta = document.querySelector('meta[name="description"]');
+      if(meta){
+        meta.setAttribute('content', lang==='es' ? 
+          'Servicios de mantenimiento y reparación del hogar en Playa del Carmen: plomería, electricidad, pintura, carpintería y más. Contáctanos por WhatsApp o visita nuestro Facebook para ver nuestros trabajos.' :
+          'Home maintenance and repair services in Playa del Carmen: plumbing, electrical, painting, carpentry and more. Message us on WhatsApp or visit our Facebook to see our work.'
+        );
+      }
+    }
+
+    document.getElementById('btn-es').addEventListener('click', ()=>setLang('es'));
+    document.getElementById('btn-en').addEventListener('click', ()=>setLang('en'));
+    setLang('es'); // default
+
+    // Contact form -> WhatsApp
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      const lang = document.documentElement.lang || 'es';
+      const intro = lang==='es' ? 'Solicitud desde el sitio web:' : 'Request from website:';
+      const text = `${intro}%0A`+
+        `Nombre/Name: ${encodeURIComponent(name)}%0A`+
+        `Tel: ${encodeURIComponent(phone)}%0A`+
+        (email?`Email: ${encodeURIComponent(email)}%0A`: '')+
+        `Mensaje/Message: ${encodeURIComponent(msg)}`;
+      const wa = `https://wa.me/529842336727?text=${text}`;
+      window.open(wa, '_blank');
+    });
+  </script>
+</body>
+</html>
